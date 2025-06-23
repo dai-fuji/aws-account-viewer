@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AWS Account Warning</title>
+    <link rel="stylesheet" href="popup.css" />
+  </head>
+  <body>
+    <div class="popup-container">
+      <div class="header">
+        <h1>AWS Account Warning</h1>
+      </div>
+
+      <div class="content">
+        <div class="toggle-section">
+          <label class="toggle-label">
+            <span class="toggle-text">拡張機能を有効にする</span>
+            <div class="toggle-switch">
+              <input type="checkbox" id="extensionToggle" checked />
+              <span class="slider"></span>
+            </div>
+          </label>
+        </div>
+
+        <div class="status-section">
+          <div class="status-indicator">
+            <span class="status-dot" id="statusDot"></span>
+            <span class="status-text" id="statusText">有効</span>
+          </div>
+        </div>
+
+        <div class="account-section">
+          <h3 class="account-title">現在のアカウント情報</h3>
+          <div class="account-info">
+            <div class="account-row">
+              <span class="account-label">検出状況:</span>
+              <span class="account-value" id="detectionStatus">確認中...</span>
+            </div>
+            <div class="account-row">
+              <span class="account-label">アカウントID:</span>
+              <span class="account-value" id="accountId">-</span>
+            </div>
+            <div class="account-row">
+              <span class="account-label">ステータス:</span>
+              <span class="account-value" id="accountStatus">-</span>
+            </div>
+          </div>
+          <button class="refresh-btn" id="refreshBtn">情報を更新</button>
+        </div>
+
+        <div class="info-section">
+          <p class="info-text">
+            この拡張機能は、検証用アカウント以外のAWSコンソールにアクセスした際に警告を表示します。
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <script src="popup.js"></script>
+  </body>
+</html>

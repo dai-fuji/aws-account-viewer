@@ -1,0 +1,245 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, sans-serif;
+  background-color: #f8f9fa;
+  min-width: 300px;
+  max-width: 400px;
+}
+
+.popup-container {
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+}
+
+.header {
+  background: linear-gradient(135deg, #ff9500 0%, #ff6b35 100%);
+  color: white;
+  padding: 16px 20px;
+  text-align: center;
+}
+
+.header h1 {
+  margin: 0;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.content {
+  padding: 20px;
+}
+
+.toggle-section {
+  margin-bottom: 20px;
+}
+
+.toggle-label {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  cursor: pointer;
+  user-select: none;
+}
+
+.toggle-text {
+  font-size: 14px;
+  font-weight: 500;
+  color: #333;
+}
+
+.toggle-switch {
+  position: relative;
+  width: 50px;
+  height: 24px;
+}
+
+.toggle-switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  transition: 0.3s;
+  border-radius: 24px;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 18px;
+  width: 18px;
+  left: 3px;
+  bottom: 3px;
+  background-color: white;
+  transition: 0.3s;
+  border-radius: 50%;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+input:checked + .slider {
+  background-color: #ff9500;
+}
+
+input:checked + .slider:before {
+  transform: translateX(26px);
+}
+
+.status-section {
+  margin-bottom: 20px;
+  padding: 12px;
+  background-color: #f8f9fa;
+  border-radius: 6px;
+  border-left: 4px solid #ff9500;
+}
+
+.status-indicator {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.status-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: #28a745;
+  animation: pulse 2s infinite;
+}
+
+.status-dot.disabled {
+  background-color: #dc3545;
+  animation: none;
+}
+
+@keyframes pulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(40, 167, 69, 0.7);
+  }
+  70% {
+    box-shadow: 0 0 0 10px rgba(40, 167, 69, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(40, 167, 69, 0);
+  }
+}
+
+.status-text {
+  font-size: 13px;
+  font-weight: 500;
+  color: #333;
+}
+
+.account-section {
+  margin-bottom: 20px;
+  padding: 16px;
+  background-color: #f8f9fa;
+  border-radius: 8px;
+  border: 1px solid #e9ecef;
+}
+
+.account-title {
+  margin: 0 0 12px 0;
+  font-size: 14px;
+  font-weight: 600;
+  color: #333;
+}
+
+.account-info {
+  margin-bottom: 12px;
+}
+
+.account-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 8px;
+  padding: 4px 0;
+}
+
+.account-row:last-child {
+  margin-bottom: 0;
+}
+
+.account-label {
+  font-size: 12px;
+  color: #666;
+  font-weight: 500;
+}
+
+.account-value {
+  font-size: 12px;
+  color: #333;
+  font-weight: 600;
+  max-width: 60%;
+  text-align: right;
+  word-break: break-all;
+}
+
+.account-value.detected {
+  color: #28a745;
+}
+
+.account-value.not-detected {
+  color: #dc3545;
+}
+
+.account-value.valid {
+  color: #28a745;
+}
+
+.account-value.invalid {
+  color: #dc3545;
+}
+
+.refresh-btn {
+  width: 100%;
+  padding: 8px 12px;
+  background: #ff9500;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 12px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.refresh-btn:hover {
+  background: #e8850e;
+}
+
+.refresh-btn:active {
+  background: #d17711;
+}
+
+.info-section {
+  border-top: 1px solid #e9ecef;
+  padding-top: 16px;
+}
+
+.info-text {
+  font-size: 12px;
+  color: #666;
+  line-height: 1.4;
+  margin: 0;
+}
+
+/* ホバー効果 */
+.toggle-label:hover .toggle-text {
+  color: #ff9500;
+}
+
+.toggle-switch:hover .slider {
+  box-shadow: 0 0 0 3px rgba(255, 149, 0, 0.1);
+}

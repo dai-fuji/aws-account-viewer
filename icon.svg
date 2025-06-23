@@ -1,0 +1,31 @@
+<svg width="128" height="128" viewBox="0 0 128 128" xmlns="http://www.w3.org/2000/svg">
+  <!-- 背景の円 -->
+  <circle cx="64" cy="64" r="60" fill="url(#gradient)" stroke="#ff4500" stroke-width="4"/>
+  
+  <!-- グラデーション定義 -->
+  <defs>
+    <linearGradient id="gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#ff8c00;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#ff6b35;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#ff4500;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  
+  <!-- AWS の雲のアイコン -->
+  <path d="M40 45 Q35 45 32 48 Q30 52 32 56 Q35 59 40 59 L88 59 Q93 59 96 56 Q98 52 96 48 Q93 45 88 45 L40 45 Z" fill="white" opacity="0.9"/>
+  <path d="M35 55 Q33 55 31 57 Q30 60 31 62 Q33 64 35 64 L93 64 Q95 64 97 62 Q98 60 97 57 Q95 55 93 55 L35 55 Z" fill="white" opacity="0.7"/>
+  
+  <!-- 警告の感嘆符 -->
+  <rect x="58" y="35" width="12" height="25" rx="6" fill="white"/>
+  <circle cx="64" cy="75" r="4" fill="white"/>
+  
+  <!-- アカウント番号の表現（小さな四角） -->
+  <rect x="25" y="80" width="6" height="6" fill="white" opacity="0.8"/>
+  <rect x="35" y="80" width="6" height="6" fill="white" opacity="0.8"/>
+  <rect x="45" y="80" width="6" height="6" fill="white" opacity="0.8"/>
+  <rect x="55" y="80" width="6" height="6" fill="white" opacity="0.8"/>
+  <rect x="65" y="80" width="6" height="6" fill="white" opacity="0.8"/>
+  <rect x="75" y="80" width="6" height="6" fill="white" opacity="0.8"/>
+  <rect x="85" y="80" width="6" height="6" fill="white" opacity="0.8"/>
+  <rect x="95" y="80" width="6" height="6" fill="white" opacity="0.8"/>
+</svg> 
