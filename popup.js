@@ -35,33 +35,24 @@ document.addEventListener("DOMContentLoaded", async () => {
         currentWindow: true,
       });
       if (tab && tab.url && tab.url.includes("console.aws.amazon.com")) {
-        // メッセージ送信を試行
         try {
           await chrome.tabs.sendMessage(tab.id, {
             action: "toggleExtension",
             enabled: enabled,
           });
-          console.log("コンテンツスクリプトに状態変更を通知しました");
 
           // 状態変更後にアカウント情報を更新
           setTimeout(refreshAccountInfo, 500);
         } catch (messageError) {
           // メッセージ送信に失敗した場合（コンテンツスクリプトが読み込まれていない等）
-          console.log(
+          console.error(
             "コンテンツスクリプトへのメッセージ送信に失敗:",
-            messageError.message
-          );
-
-          // ユーザーに再読み込みを促すメッセージを表示することも可能
-          console.log(
-            "設定は保存されました。ページを再読み込みすると変更が反映されます。"
+            messageError
           );
         }
-      } else {
-        console.log("現在のタブはAWSコンソールではありません");
       }
     } catch (error) {
-      console.log("タブ情報の取得に失敗しました:", error);
+      console.error("タブ情報の取得に失敗しました:", error);
     }
   });
 
@@ -108,7 +99,7 @@ document.addEventListener("DOMContentLoaded", async () => {
 
             // ステータスを表示
             if (info.isValid) {
-              accountStatus.textContent = "検証用アカウント";
+              accountStatus.textContent = "社内検証用アカウント";
               accountStatus.className = "account-value valid";
             } else {
               accountStatus.textContent = "本番アカウント";
@@ -127,12 +118,12 @@ document.addEventListener("DOMContentLoaded", async () => {
       } catch (messageError) {
         detectionStatus.textContent = "通信エラー";
         detectionStatus.className = "account-value not-detected";
-        console.log("アカウント情報の取得に失敗:", messageError.message);
+        console.error("アカウント情報の取得に失敗:", messageError);
       }
     } catch (error) {
       detectionStatus.textContent = "エラー";
       detectionStatus.className = "account-value not-detected";
-      console.log("アカウント情報取得処理でエラー:", error);
+      console.error("アカウント情報取得処理でエラー:", error);
     }
   }
 
